@@ -1,8 +1,14 @@
-import string
+def snail(array):
+    a = []
+    while array:
+        a.extend(list(array.pop(0)))
+        print(a)
+        array = list(zip(*array))
+        print(array)
+        array.reverse()
+        print(array)
+    return a
 
-def is_pangram(s):
-    print(set(s.lower()))
-    print(set(string.lowercase))
-    return set(string.lowercase) <= set(s.lower())
-
-is_pangram( "The quick brown fox jumps over the lazy dog" )
+snail([[1,2,3],
+       [4,5,6],
+       [7,8,9]])
